@@ -1,0 +1,49 @@
+name: MyAppTest
+
+options:
+  bundleIdPrefix: com.yourname
+  createIntermediateGroups: true
+  deploymentTarget:
+    iOS: "18.0"
+  usesTabs: false
+  indentWidth: 4
+  tabWidth: 4
+
+targets:
+  MyAppTest:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    
+    sources:
+      - path: MyAppTest
+        excludes:
+          - Info.plist
+        children: 
+          - path: Assets.xcassets
+          - path: LaunchScreen.storyboard
+  
+    settings:
+      base:
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: ""
+        CODE_SIGNING_REQUIRED: NO
+        CODE_SIGNING_ALLOWED: NO
+        DEVELOPMENT_TEAM: ""
+        ENABLE_BITCODE: NO
+        PRODUCT_BUNDLE_IDENTIFIER: com.yourname.MyAppTest
+        INFOPLIST_FILE: MyAppTest/Info.plist
+        SWIFT_VERSION: 5.0
+        TARGETED_DEVICE_FAMILY: "1,2"
+        IPHONEOS_DEPLOYMENT_TARGET: "18.0"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+
+    info:
+      path: MyAppTest/Info.plist
+      properties:
+        UILaunchStoryboardName: LaunchScreen
+        UIRequiresFullScreen: true
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
